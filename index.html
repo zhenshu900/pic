@@ -1,1 +1,34 @@
-<h1>hello world</h1>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>File List</title>
+</head>
+<body>
+    <h1>File List</h1>
+    <ul id="fileList">
+    </ul>
+
+    <script>
+        // 获取当前文件夹下的所有文件
+        function listFiles() {
+            var fileListElement = document.getElementById("fileList");
+            var files = ["file1.txt", "file2.jpg", "file3.png"]; // 这里假设你已经有一个文件列表
+
+            // 清空文件列表
+            fileListElement.innerHTML = "";
+
+            // 在列表中展示文件名
+            files.forEach(function(file) {
+                var listItem = document.createElement("li");
+                listItem.textContent = file;
+                fileListElement.appendChild(listItem);
+            });
+        }
+
+        // 页面加载完成时调用listFiles函数
+        window.onload = function() {
+            listFiles();
+        };
+    </script>
+</body>
+</html>
